@@ -25,7 +25,8 @@ DEVICE_PACKAGE_OVERLAYS += device/htc/doubleshot/overlay
 # GPS
 PRODUCT_PACKAGES += \
     gps.doubleshot \
-    lights.doubleshot
+    lights.doubleshot \
+    libOmxCore
 
 # Wifi
 $(call inherit-product-if-exists, hardware/broadcom/wlan/bcmdhd/firmware/bcm4329/device-bcm.mk)
@@ -127,8 +128,8 @@ $(call inherit-product, device/htc/doubleshot/media_htcaudio.mk)
 $(call inherit-product, frameworks/native/build/phone-xhdpi-1024-dalvik-heap.mk)
 
 # Discard inherited values and use our own instead.
-PRODUCT_DEVICE := doubleshot
+PRODUCT_DEVICE := full_doubleshot
 PRODUCT_NAME := doubleshot
-PRODUCT_BRAND := htc
-PRODUCT_MODEL := MyTouch 4G Slide
+PRODUCT_BRAND := HTC
+PRODUCT_MODEL := HTC Doubleshot
 PRODUCT_MANUFACTURER := HTC

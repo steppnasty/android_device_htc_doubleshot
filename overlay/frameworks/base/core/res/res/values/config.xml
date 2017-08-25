@@ -41,7 +41,7 @@
     <integer name="config_defaultNotificationLedOff">9000</integer>
 
     <!-- Our amoled doesn't animate well. -->
-    <bool name="config_animateScreenLights">false</bool>
+    <bool name="config_animateScreenLights">true</bool>
 
     <!-- disable menu hard key on Pyramid in non-pattern lockscreen -->
     <bool name="config_disableMenuKeyInLockScreen">true</bool>
@@ -202,8 +202,5 @@
 
     <!-- Is the notification LED intrusive? Used to decide if there should be a disable option -->
     <bool name="config_intrusiveNotificationLed">true</bool>
-
-    <!-- Is the battery LED intrusive? Used to decide if there should be a disable option -->
-    <bool name="config_intrusiveBatteryLed">true</bool>
 
 </resources>

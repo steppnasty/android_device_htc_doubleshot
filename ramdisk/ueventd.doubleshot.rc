@@ -13,12 +13,6 @@
 /dev/msm_rotator        0660    system      graphics
 /dev/pmem               0660    system      graphics
 
-# camera
-/dev/gemini0            0660    system      camera
-/dev/msm_camera/*       0660    system      camera
-/dev/pmem_smipool*      0660    system      camera
-/dev/pmem_camera*       0660    system      camera
-
 # DIAG device node is world readable/writable
 /dev/diag               0666    root        root
 
@@ -49,6 +43,7 @@
 /dev/msm_vidc_dec       0660    system      audio
 /dev/msm_vidc_dec_sec   0660    system      audio
 /dev/msm_vidc_enc       0660    system      audio
+/dev/msm_vidc_enc_sec   0660    system      audio
 /dev/msm_vidc_reg       0660    system      audio
 /dev/msm_fm             0660    system      audio
 /dev/msm_mvs            0660    system      audio
@@ -58,6 +53,12 @@
 /dev/msm_wmapro         0660    system      audio
 /dev/msm_aac_in         0660    system      audio
 /dev/msm_amrnb_in       0640    system      audio
+
+# camera
+/dev/gemini0            0660    system      camera
+/dev/video*             0660    system      camera
+/dev/media*             0660    system      camera
+/dev/v4l-subdev*        0660    system      camera
 
 /dev/ttyHS0             0600    bluetooth   bluetooth
 /dev/ttyHSUSB0          0600    system      system

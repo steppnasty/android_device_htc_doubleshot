@@ -27,24 +27,12 @@
 # inherit from common msm8660
 -include device/htc/msm8660-common/BoardConfigCommon.mk
 
+# Bluetooth
+BOARD_HAVE_BLUETOOTH_BCM := true
+BOARD_BLUEDROID_VENDOR_CONF := device/htc/msm8660-common/bluetooth/vnd_msm8660.txt
+
 # Bootloader
 TARGET_BOOTLOADER_BOARD_NAME := doubleshot
-
-# Kernel
-BOARD_KERNEL_BASE := 0x48000000
-BOARD_KERNEL_PAGE_SIZE := 2048
-BOARD_KERNEL_CMDLINE := no_console_suspend=1
-TARGET_KERNEL_CONFIG := doubleshot_defconfig
-TARGET_KERNEL_SOURCE := kernel/htc/android_kernel_htc_msm8660
-
-# GPS
-BOARD_VENDOR_QCOM_GPS_LOC_API_HARDWARE := doubleshot
-
-# RIL
-BOARD_USES_LEGACY_RIL := true
-
-# Wifi
--include device/htc/msm8660-common/bcmdhd.mk
 
 # Filesystem
 TARGET_USERIMAGES_USE_EXT4 := true
@@ -54,9 +42,25 @@ BOARD_SYSTEMIMAGE_PARTITION_SIZE := 838859776
 BOARD_USERDATAIMAGE_PARTITION_SIZE := 1252770816
 BOARD_FLASH_BLOCK_SIZE := 262144
 
-# bluetooth
-BOARD_HAVE_BLUETOOTH_BCM := true
-BOARD_BLUEDROID_VENDOR_CONF := device/htc/msm8660-common/bluetooth/vnd_msm8660.txt
+# GPS
+BOARD_VENDOR_QCOM_GPS_LOC_API_HARDWARE := doubleshot
 
-# HTC specific
+# Kernel
+BOARD_KERNEL_BASE := 0x48000000
+BOARD_KERNEL_PAGE_SIZE := 2048
+BOARD_KERNEL_CMDLINE := no_console_suspend=1
+TARGET_KERNEL_CONFIG := doubleshot_defconfig
+TARGET_KERNEL_SOURCE := kernel/msm
+
+# Ion
+TARGET_USES_ION := true
+
+# RIL
+BOARD_USES_LEGACY_RIL := true
 BOARD_USE_NEW_LIBRIL_HTC := true
+
+# Trackpad
+BOARD_USE_LEGACY_TRACKPAD := true
+
+# Wifi
+-include device/htc/msm8660-common/bcm4329.mk
